@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Delete, Get, Param, Patch, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post,Query } from '@nestjs/common';
 import { CreateTerrainDTO } from './dtos/create-terrain.dto';
+import { FilterTerrainDTO } from './dtos/filter-terrain.dto';
 import { UpdateTerrainDTO } from './dtos/update-terrain.dto';
-
 import { Terrain } from './schemas/terrain.schema';
 import { TerrainService } from './terrain.service';
 
@@ -16,8 +16,13 @@ export class TerrainController {
   }
 
   @Get()
-  async getTerrains(): Promise<Terrain[]> {
+  async getTerrains(@Query() filterDTO: FilterTerrainDTO): Promise<Terrain[]> {
+    if(Object.keys(filterDTO).length){
+      return this.terrainService.getTerrainsWithFilters(filterDTO);
+    } else {
       return this.terrainService.getTerrains();
+    }
+    
   }
 
   @Post()

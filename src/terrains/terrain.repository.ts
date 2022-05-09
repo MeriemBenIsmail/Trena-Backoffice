@@ -26,4 +26,7 @@ export class TerrainRepository {
     async findOneAndDelete(terrainFilterQuery: FilterQuery<Terrain>): Promise<Terrain> {
         return this.terrainModel.findOneAndDelete(terrainFilterQuery);
     }
+    async count(options) {
+        return this.terrainModel.count(options).exec();
+    }
 }
