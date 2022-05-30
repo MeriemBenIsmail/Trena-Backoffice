@@ -27,6 +27,7 @@
     "@nestjs/mapped-types": "*",
     "@nestjs/mongoose": "^9.0.3",
     "@nestjs/platform-express": "^8.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "mongoose": "^6.3.2",
     "reflect-metadata": "^0.1.13",

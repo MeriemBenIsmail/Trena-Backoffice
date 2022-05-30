@@ -5,4 +5,5 @@ export class UpdateTerrainDTO {
     address: string;
     surface: number;
     available: boolean;
+
 }
