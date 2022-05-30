@@ -6,4 +6,5 @@ export class CreateTerrainDTO {
     surface: number;
     available: boolean;
     type: string;
+    
 }
