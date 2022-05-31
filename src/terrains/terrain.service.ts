@@ -12,7 +12,7 @@ export class TerrainService {
     constructor(private readonly terrainRepository: TerrainRepository) {}
 
     async getTerrainById(terrainId: string): Promise<Terrain> {
-        return this.terrainRepository.findOne({ terrainId })
+        return this.terrainRepository.findOne({_id: terrainId })
     }
 
     async getTerrains(): Promise<Terrain[]> {
