@@ -16,9 +16,9 @@ export class Reservation {
     @Prop()
     date: Date;
     @Prop()
-    heure_debut: string;
+    heure_debut: number;
     @Prop()
-    heure_fin: string;
+    heure_fin: number;
 
 }
 export const ReservationSchema = SchemaFactory.createForClass(Reservation);
